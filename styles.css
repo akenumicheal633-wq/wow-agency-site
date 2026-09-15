@@ -1,0 +1,173 @@
+
+/* WOW Agency — complete visual system refresh */
+:root{
+  --ink:#30363E;
+  --ink-deep:#252B33;
+  --panel:#383F49;
+  --panel-raised:#414A55;
+  --text:#F1EFE9;
+  --text-dim:#AAB1BA;
+  --gold:#D4AF37;
+  --gold-bright:#E5B800;
+  --blue:#0F4C81;
+  --blue-bright:#1C6BAD;
+  --magenta:#9C27B0;
+  --magenta-bright:#B93FCE;
+  --red:#E53935;
+  --red-bright:#F0554F;
+  --error:#ff8e83;
+  --error-bg:rgba(229,57,53,0.14);
+  --success:#9ae6c6;
+  --success-bg:rgba(31,178,109,0.12);
+  --line:rgba(241,239,233,0.13);
+  --line-strong:rgba(241,239,233,0.24);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+
+@view-transition{ navigation:auto; }
+::view-transition-old(root), ::view-transition-new(root){ animation-duration:0.32s; animation-timing-function:ease; }
+body{ animation:page-fade-in 0.4s ease; }
+@keyframes page-fade-in{ from{opacity:0;} to{opacity:1;} }
+@media (prefers-reduced-motion: reduce){
+  body{animation:none;}
+  ::view-transition-old(root), ::view-transition-new(root){animation:none;}
+  html{scroll-behavior:auto;}
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:'DM Sans', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit; text-decoration:none;}
+::selection{background:var(--gold); color:var(--ink);}
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+.mono{font-family:'JetBrains Mono', monospace; letter-spacing:0.03em;}
+.tag{
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.78rem;
+  color:var(--text-dim);
+  display:inline-flex;
+  align-items:center;
+  gap:0.5em;
+}
+.tag .dot{width:6px; height:6px; border-radius:50%; background:var(--gold); display:inline-block;}
+
+h1,h2,h3{
+  font-family:'Plus Jakarta Sans', sans-serif;
+  letter-spacing:-0.01em;
+  font-weight:600;
+}
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem clamp(1.5rem, 5vw, 4rem);
+  background:rgba(48,54,62,0.78);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:0.7rem;}
+.brand img{height:38px; width:auto; display:block;}
+nav ul{list-style:none; display:flex; align-items:center; gap:clamp(1.2rem, 3vw, 2.2rem); font-size:0.92rem; font-weight:500;}
+nav a{position:relative; padding:0.2rem 0; color:var(--text);}
+nav a[aria-current="page"]{color:var(--gold-bright);}
+nav a:not(.nav-cta)::after{
+  content:""; position:absolute; left:0; bottom:-2px; width:0%; height:1.5px;
+  background:var(--gold-bright); transition:width 0.25s ease;
+}
+nav a[aria-current="page"]::after{width:100%;}
+nav a:not(.nav-cta):hover::after{width:100%;}
+.nav-cta{
+  background:linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color:var(--ink); font-weight:600; padding:0.55rem 1.2rem; border-radius:100px; font-size:0.85rem;
+  transition:filter 0.2s ease, transform 0.2s ease;
+}
+.nav-cta:hover{filter:brightness(1.08); transform:translateY(-1px);}
+.nav-toggle{display:none; flex-direction:column; justify-content:space-between; width:24px; height:18px; background:none; border:none; cursor:pointer;}
+.nav-toggle span{display:block; height:2px; background:var(--text); border-radius:2px;}
+.mobile-menu{
+  position:fixed; inset:0; background:var(--ink); z-index:100; display:flex; flex-direction:column;
+  justify-content:flex-start; gap:1.6rem; padding:9rem clamp(1.5rem,5vw,4rem); transform:translateY(-100%);
+  transition:transform 0.35s ease;
+}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu ul{list-style:none; display:flex; flex-direction:column; gap:1.6rem;}
+.mobile-menu a{
+  position:relative; display:inline-flex; align-items:center; gap:0.4rem;
+  font-family:'Plus Jakarta Sans', sans-serif; font-size:1.9rem; font-weight:600;
+  color:var(--text); padding:0.2rem 0; transition:color 0.2s ease, transform 0.2s ease, text-shadow 0.2s ease;
+}
+.mobile-menu a:hover,
+.mobile-menu a:focus-visible{
+  color:var(--gold-bright); transform:translateX(4px); text-shadow:0 0 18px rgba(229,184,0,0.3);
+}
+.mobile-menu .close-btn{position:absolute; top:1.4rem; right:clamp(1.5rem,5vw,4rem); background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--text);}
+body.menu-open{overflow:hidden;}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary{
+  background:linear-gradient(135deg, var(--gold), var(--gold-bright));
+  box-shadow:0 10px 26px -8px rgba(212,175,55,0.5);
+  color:var(--ink); font-weight:600; font-size:0.95rem;
+  padding:0.95rem 1.8rem; border-radius:100px; display:inline-flex; align-items:center; justify-content:center;
+  gap:0.6rem; border:none; cursor:pointer;
+  transition:box-shadow 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover:not(:disabled){box-shadow:0 12px 30px -8px rgba(212,175,55,0.65); transform:translateY(-1px); filter:brightness(1.04);}
+.btn-primary:disabled{opacity:0.5; cursor:not-allowed; transform:none;}
+.btn-ghost{
+  border:1.5px solid var(--line-strong); color:var(--text); font-weight:500; font-size:0.92rem;
+  padding:0.9rem 1.6rem; border-radius:100px; display:inline-flex; align-items:center; gap:0.6rem;
+  transition:border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover{border-color:var(--gold); background:rgba(212,175,55,0.08);}
+
+/* ---------- WOW EMBLEM (signature device) ---------- */
+.emblem{position:relative; display:block;}
+.emblem svg{width:100%; height:auto; display:block;}
+.emblem-core{fill:var(--gold);}
+.emblem-ring{fill:none; stroke:var(--gold); stroke-width:1.4; opacity:0.55;}
+.thread-agency{stroke:var(--blue-bright);}
+.thread-surprise{stroke:var(--magenta-bright);}
+.thread-impact{stroke:var(--red-bright);}
+.thread{fill:none; stroke-width:2.4; stroke-linecap:round; opacity:0.9;}
+
+/* ---------- PILLARS (shared across Home + Services) ---------- */
+.pillars{display:flex; flex-wrap:wrap; gap:1rem;}
+.pillar{
+  flex:1 1 260px; border-radius:20px; padding:1.9rem;
+  border:1px solid var(--line); background:var(--panel);
+  border-top:3px solid transparent;
+  transition:transform 0.2s ease, border-color 0.2s ease;
+}
+.pillar:hover{transform:translateY(-3px);}
+.pillar.agency{border-top-color:var(--blue-bright);}
+.pillar.surprise{border-top-color:var(--magenta-bright);}
+.pillar.impact{border-top-color:var(--red-bright);}
+.pillar .pillar-name{font-family:'JetBrains Mono', monospace; font-size:0.78rem; margin-bottom:0.9rem;}
+.pillar.agency .pillar-name{color:var(--blue-bright);}
+.pillar.surprise .pillar-name{color:var(--magenta-bright);}
+.pillar.impact .pillar-name{color:var(--red-bright);}
+.pillar h3{font-size:1.3rem; margin-bottom:0.6rem;}
+.pillar p{font-size:0.92rem; line-height:1.6; color:var(--text-dim);}
+
+/* ---------- CARD ---------- */
+.card{background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:clamp(1.6rem, 3vw, 2.2rem);}
+
+footer{
+  padding:2.4rem clamp(1.5rem, 5vw, 4rem);
+  display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;
+  font-size:0.82rem; color:var(--text-dim); border-top:1px solid var(--line); background:var(--ink-deep);
+}
+footer .brand img{height:26px;}
+
+@media (max-width:860px){
+  nav ul.nav-links{display:none;}
+  .nav-toggle{display:flex;}
+}
