@@ -282,6 +282,8 @@
   });
 </script><script>
   document.querySelectorAll('footer').forEach((footer) => {
+    const footerLogo = footer.querySelector('img[alt="Make It WOW! Logo"]');
+    if (footerLogo) footerLogo.closest('div.flex.items-center')?.remove();
     footer.innerHTML = footer.innerHTML.replace('HQ: Lagos &amp; Global Remote', 'HQ: Lagos, Nigeria');
   });
 </script><script>
