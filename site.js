@@ -51,6 +51,7 @@ window.addEventListener("unhandledrejection", (e) => {
       about: "about.html",
       services: "services.html",
       contact: "contact.html",
+      "start-a-project": "contact.html",
     };
 
     document.querySelectorAll("a[data-path]").forEach((link) => {

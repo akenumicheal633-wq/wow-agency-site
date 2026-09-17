@@ -311,7 +311,7 @@
     const menu = document.createElement('div');
     menu.setAttribute('aria-hidden', 'true');
     menu.style.cssText = 'display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:2rem 1.5rem;background:#ffffff;';
-    menu.innerHTML = '<nav style="display:flex;flex-direction:column;gap:1.5rem;">' + '<a href="index.html" style="font-size:1.25rem;color:#111318;">Home</a>' + '<a href="about.html" style="font-size:1.25rem;color:#111318;">About</a>' + '<a href="services.html" style="font-size:1.25rem;color:#111318;">Services</a>' + '<a href="Contact.html" style="font-size:1.25rem;color:#111318;">Contact</a>' + '</nav>';
+    menu.innerHTML = '<nav style="display:flex;flex-direction:column;gap:1.5rem;">' + '<a href="index.html" style="font-size:1.25rem;color:#111318;">Home</a>' + '<a href="about.html" style="font-size:1.25rem;color:#111318;">About</a>' + '<a href="services.html" style="font-size:1.25rem;color:#111318;">Services</a>' + '<a href="contact.html" style="font-size:1.25rem;color:#111318;">Contact</a>' + '</nav>';
     header.parentNode.insertBefore(menu, header.nextSibling);
     menu.querySelectorAll('a').forEach((link) => {
       link.style.transition = 'color 0.2s ease, transform 0.2s ease';
