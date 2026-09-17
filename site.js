@@ -59,22 +59,6 @@ window.addEventListener("unhandledrejection", (e) => {
     });
   }
 
-  function initHeaderLogo() {
-    document.querySelectorAll("header img").forEach((logo) => {
-      logo.src = "wow-agency-logo.png";
-
-      let logoLink = logo.closest("a");
-      if (!logoLink) {
-        logoLink = document.createElement("a");
-        logoLink.href = "index.html";
-        logo.parentElement.insertBefore(logoLink, logo);
-        logoLink.appendChild(logo);
-      }
-      logoLink.href = "index.html";
-      logoLink.setAttribute("aria-label", "Make It WOW! home");
-    });
-  }
-
   /* ------------------------------------------------------------------
      2. Lead capture form — client-side validation + submit simulation
         (US: lead capture form, confirms on submit)
@@ -191,7 +175,6 @@ window.addEventListener("unhandledrejection", (e) => {
 
   function init() {
     initPageNavigation();
-    initHeaderLogo();
     initMobileNav();
     initLeadForm();
     initScrollReveal();
