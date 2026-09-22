@@ -3,7 +3,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Make It WOW - Experience Agency</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Make It WOW! is an experience agency in Lagos creating brand activations, luxury gifting, milestone celebrations and charitable campaigns people remember.">
+  <meta name="theme-color" content="#0F1720">
+  <link rel="icon" type="image/png" href="wow-agency-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -48,33 +50,49 @@
       box-shadow: inset 0 0 0 1.5px rgba(245, 197, 66, 0.8), 0 12px 24px -6px rgba(15, 23, 32, 0.06);
     }
   </style>
+  <script src="site.js" defer></script>
 </head>
 <body class="bg-cream font-body text-charcoal min-h-screen flex flex-col antialiased">
-  <!-- Top Global Header (Dark Navigation matched to Reference UI) -->
-  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-charcoal text-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-      <!-- Logo brand area -->
-      <a href="index.html" class="flex items-center"><img src="wow-agency-logo.png" alt="Make It WOW! Agency" class="h-14 w-auto object-contain"></a>
-
-      <!-- Navigation links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-        <a href="index.html" class="text-gold hover:text-gold transition-colors uppercase tracking-wider text-xs font-semibold">Home</a>
-        <a href="about.html" class="text-white/80 hover:text-gold transition-colors uppercase tracking-wider text-xs">About</a>
-        <a href="services.html" class="text-white/80 hover:text-gold transition-colors uppercase tracking-wider text-xs">Services</a>
-        <a href="contact.html" class="text-white/80 hover:text-gold transition-colors uppercase tracking-wider text-xs">Contact</a>
-      </nav>
-
-      <!-- Header CTA -->
-      <div class="flex items-center gap-4">
-        <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gold text-charcoal font-display font-bold text-xs uppercase tracking-wider hover:bg-gold-hover transition-all shadow-[0_2px_10px_rgba(245,197,66,0.3)]">
-          <span class="">Let's Talk</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </a>
-      </div>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[#F5C542] focus:px-5 focus:py-2.5 focus:font-bold focus:text-[#0F1720]">Skip to content</a>
+  <header class="fixed inset-x-0 top-0 z-50 w-full bg-[#0F1720] text-white shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 lg:px-12">
+    <a href="index.html" class="flex items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]" aria-label="Make It WOW! Agency, home">
+      <img src="wow-agency-logo-light.png" alt="Make It WOW! Agency" width="480" height="239" class="h-14 w-auto object-contain sm:h-16">
+    </a>
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main">
+      
+<a href="index.html" aria-current="page" class="font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-[#F5C542]">Home</a>      <a href="about.html" class="font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80">About</a>      <a href="services.html" class="font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80">Services</a>      <a href="contact.html" class="font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#F5C542] px-6 py-2.5 font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] text-[#0F1720] shadow-[0_4px_20px_-2px_rgba(245,197,66,0.3)] transition-all hover:bg-[#E5B430] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]"><span>Let's Talk</span><span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span></a>
+      <button type="button" id="nav-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 md:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
     </div>
-  </header>
+  </div>
 
-  <main class="w-full flex-1 pt-20">
+  <!-- Mobile menu: slides in from the right -->
+  <div id="menu-backdrop" aria-hidden="true" class="invisible fixed inset-0 z-40 bg-black/60 opacity-0 transition-[opacity,visibility] duration-300 motion-reduce:transition-none data-[open=true]:visible data-[open=true]:opacity-100 md:hidden"></div>
+  <aside id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" class="invisible fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm translate-x-full flex-col bg-[#0F1720] shadow-2xl transition-[transform,visibility] duration-300 ease-out motion-reduce:transition-none data-[open=true]:visible data-[open=true]:translate-x-0 md:hidden">
+    <div class="flex h-20 shrink-0 items-center justify-between border-b border-white/10 px-6">
+      <a href="index.html" class="flex items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]" aria-label="Make It WOW! Agency, home">
+        <img src="wow-agency-logo-light.png" alt="Make It WOW! Agency" width="480" height="239" class="h-12 w-auto object-contain">
+      </a>
+      <button type="button" id="nav-close" class="inline-flex h-11 w-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]" aria-label="Close menu">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-1 flex-col overflow-y-auto px-6 py-2" aria-label="Mobile">
+      
+<a href="index.html" aria-current="page" class="flex items-center justify-between border-b border-white/10 py-4 font-['Space_Grotesk'] text-[15px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-[#F5C542]"><span>Home</span><span class="h-2 w-2 rounded-full bg-[#F5C542]" aria-hidden="true"></span></a>      <a href="about.html" class="flex items-center justify-between border-b border-white/10 py-4 font-['Space_Grotesk'] text-[15px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80"><span>About</span></a>      <a href="services.html" class="flex items-center justify-between border-b border-white/10 py-4 font-['Space_Grotesk'] text-[15px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80"><span>Services</span></a>      <a href="contact.html" class="flex items-center justify-between border-b border-white/10 py-4 font-['Space_Grotesk'] text-[15px] font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#F5C542] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542] text-white/80"><span>Contact</span></a>
+    </nav>
+    <div class="shrink-0 border-t border-white/10 p-6">
+      <a href="contact.html" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#F5C542] px-6 py-2.5 font-['Space_Grotesk'] text-[13px] font-bold uppercase tracking-[0.08em] text-[#0F1720] shadow-[0_4px_20px_-2px_rgba(245,197,66,0.3)] transition-all hover:bg-[#E5B430] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]"><span>Let's Talk</span><span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span></a>
+    </div>
+  </aside>
+</header>
+
+  <main id="main" class="w-full flex-1 pt-20">
     <!-- Hero Section with Concert / Crowd Photography & Bold Headline -->
     <section class="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -86,8 +104,6 @@
               EXPERIENCES &nbsp;/&nbsp; PEOPLE &nbsp;/&nbsp; LASTING IMPACT
             </span>
           </div>
-
-          <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
 
           <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02] text-charcoal uppercase"><span class="block text-[#0F1720] tracking-tight">MAKE IT</span><span class="inline-block bg-gradient-to-r from-[#F5C542] via-[#FFB703] to-[#8B3DFF] bg-clip-text text-transparent font-black drop-shadow-sm">WOW!</span></h1>
 
@@ -212,7 +228,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
         <!-- Left column: Larger agency logo dominating visual balance -->
         <div class="lg:col-span-5 flex items-center justify-center lg:justify-start">
-          <img src="wow-agency-logo.png" alt="Make It WOW! Agency" class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-sm">
+          <img src="wow-agency-logo.png" alt="Make It WOW! Agency" width="720" height="358" class="w-full max-w-sm sm:max-w-md h-auto object-contain drop-shadow-sm">
         </div>
         <!-- Right column: Services heading and intro description -->
         <div class="lg:col-span-7 flex flex-col gap-3 items-start lg:items-end text-left lg:text-right">
@@ -461,7 +477,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
         <div class="md:col-span-5 flex flex-col gap-4">
-          <div class="flex items-center gap-2"><a href="index.html" class="flex items-center"><img src="wow-agency-logo.png" alt="Make It WOW! Agency" class="h-14 w-auto object-contain"></a></div>
+          <a href="index.html" class="inline-flex rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5C542]"><img src="wow-agency-logo-light.png" alt="Make It WOW! Agency" width="480" height="239" loading="lazy" class="h-16 w-auto object-contain"></a>
           <p class="text-white/70 text-sm max-w-sm leading-relaxed">
             High-octane experiential activations, unexpected luxury gifting, and high-leverage charitable impact for ambitious global brands and cultural instigators.
           </p>
@@ -540,8 +556,11 @@
       });
     }
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     function startAutoplay() {
       stopAutoplay();
+      if (reduceMotion) return;
       autoplayTimer = setInterval(() => {
         updateSlider(currentIndex + 1);
       }, 4500);
